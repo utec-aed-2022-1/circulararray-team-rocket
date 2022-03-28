@@ -172,27 +172,27 @@ void CircularArray<T>::clear(){
   front= back= -1;
 };
 
+
+
 template <class T>
 void CircularArray<T>::sort(){
-  bool swap = true;
-  T temp;
-  int index=front;
-  while(swap){
-    swap = false;
-    for(int i=0; i<size()-1; i++){
-      int nextIndex = next(index); 
-      
-      if(array[nextIndex]<array[index]){
-        temp = array[index];
-        array[index] = array[nextIndex];
-        array[nextIndex] = temp;
-        swap = true;
-      }
-      index = next(index);
+    bool swap = true;
+    int index=front;
+    while (swap){
+        swap = false;
+        for (int i=0; i<size()-1; ++i){
+            int nextIndex = next(index);
+            if (array[nextIndex]<array[index]){
+                T temp = array[index];
+                array[index] = array[nextIndex];
+                array[nextIndex] = temp;
+                swap = true;
+            }
+            index = next(index);
+        }
+        index=front;
     }
-  }
 };
-
 
 
 template <class T>
@@ -211,12 +211,17 @@ bool CircularArray<T>::is_sorted(){
 template <class T>
 void CircularArray<T>::reverse(){
   stack<T> stackTemporal;
-  for(int index=front; index<size(); next(index)){
+  int index=front;
+  for(int i=0; i<size(); i++){
     stackTemporal.push(array[index]);
+    index=next(index);
   }
-  for(int index=front; index<size(); next(index)){
+
+  int index_2=front;
+  for(int i=0; i<size(); i++){
     array[index] = stackTemporal.top();
     stackTemporal.pop();
+    index=next(index);
   }
 };
 
