@@ -1,6 +1,7 @@
 #include <iostream>
-#include "circulararray.h"
 #include "tester.h"
+#include "circulararray.h"
+#include "stack.h"
 
 using namespace std;
 
@@ -28,5 +29,13 @@ int main() {
     array->reverse();
     ASSERT(array->to_string() == "15 10 8 7 4 3 2 ", "The function reverse is not working");   
     delete array;
+    /*
+    StackArray<int>* _stack = new StackArray<int>(4);
+    _stack->push(1);
+    _stack->push(2);
+    _stack->push(3);
+    _stack->push(4);
+    delete _stack;
+    */
     return 0;
 }
