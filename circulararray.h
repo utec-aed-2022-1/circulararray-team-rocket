@@ -3,12 +3,15 @@
 #include <vector>
 #include <stack>
 
+#ifndef CIRCULARARRAY_H_
+#define CIRCULARARRAY_H_
+
 using namespace std;
 
 template <class T>
 class CircularArray
 {
-private:
+protected:
     T *array;
     int capacity;
     int back=-1, front=-1;    
@@ -36,6 +39,7 @@ private:
     int next(int);
     int prev(int);
 };
+
 
 //Just testing 
 template <class T>
@@ -232,4 +236,7 @@ T& CircularArray<T>::operator[](int index){
     }
     return array[index];
 } 
+
+#endif 
+
 
