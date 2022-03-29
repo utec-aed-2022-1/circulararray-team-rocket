@@ -1,6 +1,8 @@
+#ifndef CIRCULARARRAY_H_
+#define CIRCULARARRAY_H_
+
 #include <iostream>
 #include <stdexcept>
-#include <vector>
 #include <stack>
 
 using namespace std;
@@ -8,17 +10,17 @@ using namespace std;
 template <class T>
 class CircularArray
 {
-private:
+protected:
     T *array;
     int capacity;
-    int back=-1, front=-1;    
+    int back, front;    
 public:
     CircularArray();                      //Done
     CircularArray(int);                   //Done
     virtual ~CircularArray();             //Done
     void push_front(T data);              //Done
     void push_back(T data);               //Done
-    void insert(T data, int pos);         //Done?
+    void insert(T data, int pos);         //Done
     T pop_front();                        //Done
     T pop_back();                         //Done
     bool is_full();                       //Done
@@ -29,20 +31,12 @@ public:
     void sort();                          //Done
     bool is_sorted();                     //Done
     void reverse();                       //Done
-    string to_string(string sep=" ");   //Done
-    void get_f_b();                    //Just testing 
+    string to_string(string sep=" ");     //Done 
 
 private:
     int next(int);
     int prev(int);
 };
-
-//Just testing 
-template <class T>
-void CircularArray<T>::get_f_b(){
-    cout<<front<<" "<<back;
-}
-
 
 template <class T>
 CircularArray<T>::CircularArray(){
@@ -172,8 +166,6 @@ void CircularArray<T>::clear(){
   front= back= -1;
 };
 
-
-
 template <class T>
 void CircularArray<T>::sort(){
     bool swap = true;
@@ -228,8 +220,12 @@ void CircularArray<T>::reverse(){
 template <class T>
 T& CircularArray<T>::operator[](int index){
     if (index >= size()){
-        throw("Array index out of bound");
+      throw("El indice del array se encuentra fuera de los limites");
+    }
+    else if (index < 0){
+      throw("El indice ingresado es invalido");
     }
     return array[index];
-} 
+}
 
+#endif

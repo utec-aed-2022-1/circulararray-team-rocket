@@ -1,3 +1,0 @@
-/home/sanders/github-classroom/utec-aed-2022-1/circulararray-team-rocket/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/sanders/github-classroom/utec-aed-2022-1/circulararray-team-rocket/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/sanders/github-classroom/utec-aed-2022-1/circulararray-team-rocket/cmake-build-debug/CMakeFiles/circulararray_team_rocket.dir
