@@ -1,9 +1,10 @@
-#ifndef CIRCULARARRAY_H_
-#define CIRCULARARRAY_H_
-
 #include <iostream>
 #include <stdexcept>
+#include <vector>
 #include <stack>
+
+#ifndef CIRCULARARRAY_H_
+#define CIRCULARARRAY_H_
 
 using namespace std;
 
@@ -13,26 +14,25 @@ class CircularArray
 protected:
     T *array;
     int capacity;
-    int back, front;    
+    int back=-1, front=-1;    
 public:
-    CircularArray();                      //Done
-    CircularArray(int);                   //Done
-    virtual ~CircularArray();             //Done
-    void push_front(T data);              //Done
-    void push_back(T data);               //Done
-    void insert(T data, int pos);         //Done
-    T pop_front();                        //Done
-    T pop_back();                         //Done
-    bool is_full();                       //Done
-    bool is_empty();                      //Done  
-    int size();                           //Done
-    void clear();                         //Done
-    T &operator[](int);                  
-    void sort();                          //Done
-    bool is_sorted();                     //Done
-    void reverse();                       //Done
-    string to_string(string sep=" ");     //Done 
-
+    CircularArray();                      
+    CircularArray(int);                   
+    virtual ~CircularArray();             
+    void push_front(T data);              
+    void push_back(T data);               
+    void insert(T data, int pos);         
+    T pop_front();                        
+    T pop_back();                         
+    bool is_full();                       
+    bool is_empty();                        
+    int size();                           
+    void clear();                         
+    T &operator[](int);                   
+    void sort();                          
+    bool is_sorted();                     
+    void reverse();                       
+    string to_string(string sep=" ");     
 private:
     int next(int);
     int prev(int);
@@ -166,6 +166,7 @@ void CircularArray<T>::clear(){
   front= back= -1;
 };
 
+//Ordena todos los elementos del array de menor a mayor
 template <class T>
 void CircularArray<T>::sort(){
     bool swap = true;
@@ -186,7 +187,7 @@ void CircularArray<T>::sort(){
     }
 };
 
-
+//Veriica si el array se encuentra ordenado de menor a mayor
 template <class T>
 bool CircularArray<T>::is_sorted(){
   int index=front;
@@ -200,6 +201,7 @@ bool CircularArray<T>::is_sorted(){
   return true;
 };
 
+//Invierte los valores del array
 template <class T>
 void CircularArray<T>::reverse(){
   stack<T> stackTemporal;
@@ -217,15 +219,18 @@ void CircularArray<T>::reverse(){
   }
 };
 
+//Accede a un elemento del array mediante el operador[]
 template <class T>
 T& CircularArray<T>::operator[](int index){
     if (index >= size()){
-      throw("El indice del array se encuentra fuera de los limites");
+        throw("El indice excede el limite del array");
     }
     else if (index < 0){
-      throw("El indice ingresado es invalido");
+        throw("El indice ingresado es invalido");
     }
     return array[index];
-}
+} 
 
-#endif
+#endif 
+
+
