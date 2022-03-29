@@ -1,6 +1,5 @@
 #include <iostream>
 #include <stdexcept>
-#include <vector>
 #include <stack>
 
 #ifndef CIRCULARARRAY_H_
