@@ -5,7 +5,7 @@ class QueueArray : public CircularArray<T> {
     public:
     QueueArray();
     QueueArray(int);
-    ~QueueArray();
+    virtual ~QueueArray();
     void enqueue(T data);
     T dequeue();
     void display();
