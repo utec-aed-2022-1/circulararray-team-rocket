@@ -25,7 +25,6 @@ QueueArray<T>::QueueArray(int _capacity){
 
 template <class T>
 QueueArray<T>::~QueueArray(){
-
 }
 
 template <class T>
