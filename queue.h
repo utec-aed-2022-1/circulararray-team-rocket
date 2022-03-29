@@ -5,7 +5,6 @@ class QueueArray : public CircularArray<T> {
     public:
     QueueArray();
     QueueArray(int);
-    virtual ~QueueArray();
     void enqueue(T data);
     T dequeue();
     void display();
@@ -21,10 +20,6 @@ QueueArray<T>::QueueArray(int _capacity){
     this->array = new T[_capacity];
     this->capacity = _capacity;
     this->front = this->back = -1;
-}
-
-template <class T>
-QueueArray<T>::~QueueArray(){
 }
 
 template <class T>

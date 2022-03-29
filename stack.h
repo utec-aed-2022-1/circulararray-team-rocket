@@ -5,7 +5,6 @@ class StackArray : public CircularArray<T> {
 public:
     StackArray();
     StackArray(int capacity);
-    virtual ~StackArray();
     T top();
     void push(T data);
     T pop();
@@ -21,10 +20,6 @@ StackArray<T>::StackArray(int _capacity){
     this->array = new T[_capacity];
     this->capacity = _capacity;
     this->front = this->back = -1;
-}
-
-template <class T>
-StackArray<T>::~StackArray(){
 }
 
 template <class T>
