@@ -62,6 +62,7 @@ CircularArray<T>::CircularArray(int _capacity){
 
 template <class T>
 CircularArray<T>::~CircularArray(){
+    cout<<"Gaa2"<<enld;
     delete[] array;
 }
 

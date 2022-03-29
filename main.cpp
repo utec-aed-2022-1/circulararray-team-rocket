@@ -7,8 +7,6 @@ using namespace std;
 
 int main() {
     QueueArray<int>* array = new QueueArray<int>(7);
-    array->enqueue(4);
-    delete array;
     /*
     CircularArray<int>* array = new CircularArray<int>(7);
     ASSERT(array->is_empty() == true, "The function is_empty is not working");
