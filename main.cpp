@@ -1,11 +1,15 @@
 #include <iostream>
 #include "tester.h"
+#include "queue.h"
 #include "circulararray.h"
-#include "stack.h"
 
 using namespace std;
 
 int main() {
+    QueueArray<int>* array = new QueueArray<int>(7);
+    array->enqueue(4);
+    delete array;
+    /*
     CircularArray<int>* array = new CircularArray<int>(7);
     ASSERT(array->is_empty() == true, "The function is_empty is not working");
     array->push_back(6);
@@ -29,13 +33,6 @@ int main() {
     array->reverse();
     ASSERT(array->to_string() == "15 10 8 7 4 3 2 ", "The function reverse is not working");   
     delete array;
-    /*
-    StackArray<int>* _stack = new StackArray<int>(4);
-    _stack->push(1);
-    _stack->push(2);
-    _stack->push(3);
-    _stack->push(4);
-    delete _stack;
     */
     return 0;
 }
