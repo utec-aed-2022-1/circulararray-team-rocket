@@ -25,7 +25,7 @@ QueueArray<T>::QueueArray(int _capacity){
 
 template <class T>
 QueueArray<T>::~QueueArray(){
-    delete[] this->array;
+
 }
 
 template <class T>

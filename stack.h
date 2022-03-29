@@ -25,7 +25,6 @@ StackArray<T>::StackArray(int _capacity){
 
 template <class T>
 StackArray<T>::~StackArray(){
-    delete[] this->array;
 }
 
 template <class T>
